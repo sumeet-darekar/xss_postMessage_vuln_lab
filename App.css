@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.no-scroll-wrapper {
+  overflow: hidden;
+  height: 100vh; /* Adjust height as needed */
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: fit-content; /* Optional to prevent extra space below the copyright */
+}
+textarea {
+  width: 300px;
+  height: 200px;
+  /* Additional styles for the text area */
+}
