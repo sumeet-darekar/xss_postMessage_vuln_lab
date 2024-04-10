@@ -85,8 +85,6 @@ function App() {
               className="my-2 bg-white text-black border border-gray-300 p-2 rounded-md cursor-text"
               id="comment"
               name="comment"
-              rows="4"
-              cols="50"
               value={comment} // Set initial value from state
               onChange={handleCommentChange} // Update state on change
             />
