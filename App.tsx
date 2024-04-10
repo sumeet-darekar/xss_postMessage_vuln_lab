@@ -57,48 +57,51 @@ function App() {
           Not So Vulnerable App
         </h1>
       </div>
-      <div className="flex flex-col items-center">
-        <div className="w-2/5 mx-auto">
-          <img
-            src={images[currentImageIndex]}
-            alt={`Image ${currentImageIndex + 1}`}
-            className="cursor-all-scroll"
-          />
-          <button onClick={handleNextImage} className="bg-black px-2 py-1 rounded-lg my-5 cursor-pointer">
-            Next Image
-          </button>
-        </div>
-        <div className="my-10 flex justify-center">
-          <div className="mr-5">
-            <h3>Name</h3>
-            <input
-              className="my-2 bg-white text-black border border-gray-300 p-2 rounded-md cursor-text"
-              type="text"
-              id="name_taker"
-              name="name_taker"
-              value={name} // Set initial value from state
-              onChange={handleNameChange} // Update state on change
+      <div >
+        
+        <div className="flex flex-col items-center">
+          <div className="w-2/5 mx-auto">
+            <img
+              src={images[currentImageIndex]}
+              alt={`Image ${currentImageIndex + 1}`}
+              className="cursor-all-scroll"
             />
+            <button onClick={handleNextImage} className="bg-black px-2 py-1 rounded-lg my-5 cursor-pointer">
+              Next Image
+            </button>
           </div>
-          <div className="">
-            <h3>Comment</h3>
-            <textarea
-              className="my-2 bg-white text-black border border-gray-300 p-2 rounded-md cursor-text"
-              id="comment"
-              name="comment"
-            
-              value={comment} // Set initial value from state
-              onChange={handleCommentChange} // Update state on change
-            />
-           
-          </div>
-        </div>
+
+          {/* Name and Comment Section - Centered in a column */}
+          <div className="flex flex-col items-center my-1">
+            <div className="mr-1">
+              <h3>Name</h3>
+              <input
+                className="my-2 bg-white text-black border border-gray-300 p-2 rounded-md cursor-text"
+                type="text"
+                id="name_taker"
+                name="name_taker"
+                value={name} // Set initial value from state
+                onChange={handleNameChange} // Update state on change
+              />
+            </div>
+            <div className="">
+              <h3>Comment</h3>
+              <textarea
+                className="my-2 bg-white text-black border border-gray-300 p-2 rounded-md cursor-text"
+                id="comment"
+                name="comment"
+                value={comment} // Set initial value from state
+                onChange={handleCommentChange} // Update state on change
+              />
+            </div></div></div>
+            <div className='flex flex-col items-center'>
          <button onClick={handleSubmitComment} className="bg-black px-2 py-1 rounded-lg my-2 cursor-pointer">
               Exploit
             </button>
+            </div>
         {submittedComment && ( // Conditionally render submitted comment
-          <div >
-            <p className='text-2xl'>Submitted Comment</p><br/>  
+          <div className='flex flex-col items-center'>
+            <p className='text-2xl '>Submitted Comment</p><br/>  
             <p>Name : {SubmittedName}</p>
             <p>Comment : {submittedComment}</p>
           </div>
