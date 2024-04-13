@@ -73,7 +73,7 @@ function App() {
         <h1 className="font-semibold font-sans hover:text-4xl text-3xl text-center py-4">
           Not So Vulnerable App<br/>
           </h1>
-          <p className='font-thin hover:text-2xl text-1xl text-center py-5'> Ever head of stored xss or postMessage Vulns</p>
+          <p className='font-thin hover:text-2xl text-1xl text-center py-5'> Ever heard of stored xss or postMessage Vulns</p>
         
       </div>
       <div >
