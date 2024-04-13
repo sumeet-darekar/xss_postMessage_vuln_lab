@@ -9,6 +9,23 @@ function App() {
   const [submittedComment, setSubmittedComment] = useState(''); // Added state for displaying submitted comment
   const [SubmittedName, setSubmittedName] = useState('');
 
+
+  const setCookie = (name: string, value: string, days: number) => {
+    let expires = '';
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  };
+
+  // Set the "done" cookie with a value of "true" and an expiration of 1 day (86400 seconds)
+  useEffect(() => {
+    setCookie('flag', 'dummyDumbDumb', 1);
+  }, []);
+
+
   useEffect(() => {
 
     const getImages = async () => {
@@ -53,9 +70,11 @@ function App() {
     <>
     <div className='no-scroll-wrapper'>
       <div>
-        <h1 className="font-semibold font-sans hover:text-4xl text-3xl text-center py-10">
-          Not So Vulnerable App
-        </h1>
+        <h1 className="font-semibold font-sans hover:text-4xl text-3xl text-center py-4">
+          Not So Vulnerable App<br/>
+          </h1>
+          <p className='font-thin hover:text-2xl text-1xl text-center py-5'> Ever head of stored xss or postMessage Vulns</p>
+        
       </div>
       <div >
         
@@ -103,14 +122,14 @@ function App() {
           <div className='flex flex-col items-center'>
             <p className='text-2xl '>Submitted Comment</p><br/>  
             <p>Name : {SubmittedName}</p>
-            <p>Comment : {submittedComment}</p>
+           <p>Comment : <span dangerouslySetInnerHTML={{ __html: submittedComment }} /></p>
           </div>
         )}
       </div>
       <br/><br/>
       </div>
       <footer className="copyright no-scroll flex justify-center py-1" >
-    <p>&copy; copyright 2024 [ SSS ]</p>
+    <p>&copy; copyright 2024 [ noobstain ]</p>
   </footer>
     </>
   );
