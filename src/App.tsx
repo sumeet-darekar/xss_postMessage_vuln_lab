@@ -31,7 +31,7 @@ function App() {
     const getImages = async () => {
       try {
         const response = await axios.get(
-          "https://api.unsplash.com/search/photos?per_page=100&query=Adult%20girl&client_id=HP1nqhpQupb7hstBROd_AhPuQoNJsqRAOhAxS_NOySw" // Replace with your Unsplash API client ID
+          "https://api.unsplash.com/search/photos?per_page=100&query=anime&client_id=HP1nqhpQupb7hstBROd_AhPuQoNJsqRAOhAxS_NOySw" // Replace with your Unsplash API client ID
         ); // Consider using a process variable for the client ID
         const data = response.data.results;
         setImages(data.map((image: { urls: { regular: any; }; }) => image.urls?.regular)); // Extracting regular URL from each image
