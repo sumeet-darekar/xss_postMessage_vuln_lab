@@ -23,7 +23,7 @@ window.addEventListener('message', function (message) => {
   var payload = message.data;
   var messageObj = eval(payload);
 
-  if (msgObj.isActive) {
+  if (messageObj.isActive) {
     document.write("PostMessage vulnerability ^_^ ");
   }
 }, false);</script>
