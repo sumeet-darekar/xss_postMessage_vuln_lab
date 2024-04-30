@@ -10,15 +10,6 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
-/*  var postMessageHandler = function(message) {
-  var payload = message.data;
-  var messageObj = eval(payload);
-
-  if (msgObj.isActive) {
-    document.write("PostMessage vulnerability ^_^ ");
-  }
-}*/
-
 window.addEventListener('message', function(message){
   var payload = message.data;
   var messageObj = eval(payload);
