@@ -10,15 +10,22 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
-  var postMessageHandler = function(msg) {
-  var content = msg.data;
-  var msgObj = eval(content);
+/*  var postMessageHandler = function(message) {
+  var payload = message.data;
+  var messageObj = eval(payload);
 
   if (msgObj.isActive) {
-    document.write("PostMessage arrived!");
+    document.write("PostMessage vulnerability ^_^ ");
   }
-}
+}*/
 
-window.addEventListener('message', postMessageHandler, false);</script>
+window.addEventListener('message', postMessageHandler (message) => {
+  var payload = message.data;
+  var messageObj = eval(payload);
+
+  if (msgObj.isActive) {
+    document.write("PostMessage vulnerability ^_^ ");
+  }
+}, false);</script>
   </body>
 </html>
