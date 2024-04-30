@@ -19,7 +19,7 @@
   }
 }*/
 
-window.addEventListener('message', postMessageHandler (message) => {
+window.addEventListener('message', function (message) => {
   var payload = message.data;
   var messageObj = eval(payload);
 
